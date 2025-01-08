@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boosted Login Example</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/boosted.min.css" rel="stylesheet"
+        integrity="sha384-laZ3JUZ5Ln2YqhfBvadDpNyBo7w5qmWaRnnXuRwNhJeTEFuSdGbzl4ZGHAEnTozR" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="d-flex">
+
+       
+        <div class="col-4">
+            <div id="carouselExamplePause" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="1.jpg" class="d-block w-100" alt="Slide 1" width="850" height="800">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="2.jpg" class="d-block w-100" alt="Slide 2" width="850" height="800">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExamplePause"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExamplePause"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        
+        <div class="container mx-5">
+           
+
+
+            <div class=" container mx-5">
+                <div class="justify-content-between">
+                    <nav role="navigation" id="mainNav"
+                        class="navbar navbar-light bg-white navbar-expand-md pt-2 border-bottom pb-0 mb-2 pt-1"
+                        aria-label="Main navigation">
+                        <div class="container-fluid justify-content-between">
+                            <a href="/">
+                                <img id="imgw"
+                                    src="https://datascience.orangecodingacademy.com/assets/boosted/dist/img/white.png"
+                                    class="d-inline-block align-bottom mr-3" alt="Back to homepage" title="Back to homepage"
+                                    height="70" loading="lazy">
+                            </a>
+                            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                                data-target="#orange-navbar-collapse" aria-controls="orange-navbar-collapse"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse justify-content-end collapse" id="orange-navbar-collapse">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a class="nav-link" href="/help" target="_blank">Help </a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/terms" target="_blank"> Terms &amp;
+                                            Conditions</a></li>
+                                </ul>
+                                <ul class="navbar-nav">
+      
+                                </ul>
+                            </div>
+                        </div>
+      
+                    </nav>
+                </div>
+      
+
+
+
+
+
+            
+<section class="col-12" style="justify-items: center;">
+    <form onsubmit="validateForm1(event)">
+        <h1 class="mt-4">longin</h1>
+
+        
+        <div class="mb-3" style="width: 450px;height: 50px; margin-top: 20px;">
+            <label for="email1" class="form-label is-required" >Email address</label>
+            <input type="email" class="form-control" id="email1" required >
+            <div class="form-text small">e.g., username@domain.com</div>
+        </div>
+
+        
+        <div class="mb-3" style="width: 450px;height: 50px; margin-top: 50px;">
+            <label for="loginPasswordInput" class="form-label is-required">Password</label>
+            <input type="password" class="form-control" id="loginPasswordInput" required>
+        </div>
+
+        
+        <p><a href="#">Forgot your password?</a></p>
+
+        
+        <button type="submit" class="btn btn-primary" style="width: 450px;height: 50px; margin-top: 20px;">
+            Login
+        </button>
+    </form>
+</section>
+
+
+
+
+
+
+    <!-- JavaScript Section -->
+    <script>
+        function validateForm1(event) {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById('email1').value.trim();
+            const passwordInput = document.getElementById('loginPasswordInput').value.trim();
+
+            
+            const savedEmail = localStorage.getItem('email') || "test@example.com";
+            const savedPassword = localStorage.getItem('password') || "password123";
+
+            
+            if (emailInput === savedEmail && passwordInput === savedPassword) {
+                alert('Login successful! Redirecting to the dashboard...');
+                window.location.href = 'bootatrap O longin2.HTML'; 
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        }
+
+        
+        window.onload = () => {
+            if (!localStorage.getItem('email')) {
+                localStorage.setItem('email', 'test@example.com');
+                localStorage.setItem('password', 'password123');
+            }
+        };
+    </script>
+</body>
+
+</html>

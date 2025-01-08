@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #5: Input check for minimmum number of charecter should be 6 and password match in both input </title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        .err {
+            color: red;
+            font-size: 0.7em;
+        }
+    </style>
+    
+
+</head>
+<body>
+
+<form name="pw">
+    <table>
+        <tr>
+            <td>Password (min 6 characters):</td>
+            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password"></td>
+            <td>
+                <div id="pw1_check" class="err"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Repeat password:</td>
+            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password"></td>
+            <td>
+                <div id="pw2_check" class="err"></div>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" id="submitBtn"  onclick="aa()"> 
+
+</form>
+<script>
+
+
+       
+    let text1 = document.getElementById("password1").value;
+    let text2 = document.getElementById("password2").value;
+    let text3 = document.getElementById("pw1_check");
+    let text4 = document.getElementById("pw2_check");
+     
+     
+
+     function valueR (){
+         if(text1.length < 6 ){
+        text3.textContent = "err" 
+     }else{text3.textContent = ""};
+
+     if(text1 != text2){
+         text4.textContent = "err"
+     }else{text4.textContent = ""};
+
+
+     }
+
+function aa(){
+ valueR();
+ if(text3.textContent || text4.textContent){
+     event.preventDefault();
+ }
+}
+
+
+ </script>
+</body>
+</html>
+

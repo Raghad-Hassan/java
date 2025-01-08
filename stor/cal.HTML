@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <style>
+          body{
+            background-color:pink;
+          }
+
+
+            .calculator{
+                background-color: rgb(153, 223, 239);
+                width: 500px;
+                height: 600px;
+                justify-self: center;
+                margin: 60px;
+                display: grid;
+               grid-template-columns: repeat(4,110px);
+               grid-template-rows: repeat(5,110px);
+               gap: 20px;
+               row-gap: 20px;
+               column-gap: 10px;
+              justify-content: center;
+              padding:70px;
+              text-align: center;
+              font-size: 60px;
+              
+            }
+            .calculator div{
+                box-shadow: 1px 1px 1px 1px;
+            }
+         
+        .boox1{
+           grid-area: 1/5/1/1;
+            
+        }
+           
+         
+         
+
+           </style>
+    </head>
+    <body>
+        <div class="calculator">
+            <div id="boox1" class="boox1" style="background-color: white;"></div>
+           
+
+            <div class="boox" style="background-color: white;" data-value="1">1</div>
+            <div class="boox" style="background-color: white;" data-value="2">2</div>
+            <div class="boox" style="background-color: white;" data-value="3">3</div>
+            <div class="boox" style="background-color: pink;" data-value="+">+</div>
+            <div class="boox" style="background-color: white;" data-value="4">4</div>
+            <div class="boox" style="background-color: white;" data-value="5">5</div>
+            <div class="boox" style="background-color: white;" data-value="6">6</div>
+            <div class="boox" style="background-color:pink;" data-value="-">-</div>
+            <div class="boox" style="background-color: white;" data-value="7">7</div>
+            <div class="boox" style="background-color: white;" data-value="8">8</div>
+            <div class="boox" style="background-color: white;" data-value="9">9</div>
+            <div class="boox" style="background-color: pink;"data-value="*">*</div>
+            <div class="boox" style="background-color:pink;"data-value="c">c</div>
+            <div class="boox" style="background-color: white;"data-value="0">0</div>
+            <div class="boox" style="background-color: white;"data-value="=">=</div>
+            <div class="boox" style="background-color: pink;"data-value="/">/</div>
+        </div>
+
+        <script>
+
+          let result = document.getElementById("boox1");
+        let cal = "";
+
+        document.querySelectorAll(".boox").forEach(button => {
+            button.addEventListener("click", function() {
+                let value = button.getAttribute("data-value");
+
+                if (value === "=") {
+                    try {
+                        result.textContent = eval(cal);
+                        cal = result.textContent;
+                    } catch (e) {
+                        result.textContent = "Error";
+                    }
+                } else if (value === "c") {
+                    cal = "";
+                    result.textContent = ""; 
+                } else {
+                    cal += value;
+                    result.textContent = cal;
+                }
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+        </script>
+
+
+    </body>
+</html>

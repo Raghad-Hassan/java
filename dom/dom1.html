@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #7: Simple playlist</title>
+    <style>
+      body{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }  
+     p{
+        font-size: 50px;
+        color: blueviolet;
+     }  
+        
+    </style>
+</head>
+<body>
+<p>To Do list</p>
+
+<form>
+    <input type="text" id="songTextInput" size="40" placeholder="Song name">
+    <input onclick="gigi()" type="button" id="addButton" value="Add Song">
+</form>
+
+<ul id="playlist">
+</ul>
+
+<script>
+
+
+
+function gigi(){
+let spaceValue = document.getElementById("songTextInput").value;
+let btn = document.getElementById("addVutton");
+let uul = document.getElementById("playlist");
+
+let lli =document.createElement("li");
+let text1 = document.createTextNode(spaceValue);
+lli.appendChild(text1);
+
+
+let deleteButton = document.createElement("button");
+deleteButton.textContent='delete'
+lli.appendChild(deleteButton);
+uul.appendChild(lli);
+
+
+deleteButton.onclick=function(){
+    lli.remove()
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
